@@ -34,6 +34,18 @@ export const updateItem = async (id, item) => {
   }
 };
 
+export const checkItem = async (id, item) => {
+  try {
+    const result = await api.put(`/list-item/${id}`, {
+      ...item,
+    });
+    return result.data;
+  } catch (error) {
+    alert("Error check item");
+    return { error };
+  }
+};
+
 export const deleteItem = async (id) => {
   try {
     const result = await api.delete(`/list-item/${id}`);

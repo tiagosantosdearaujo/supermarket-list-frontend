@@ -1,6 +1,6 @@
 import "./index.css";
 import { useEffect, useState } from "react";
-import { getList } from "../../services/request";
+import { getList, checkItem } from "../../services/request";
 import { Button, ListRender, Loader, Modal } from "../../components";
 
 export const ListScreen = () => {
@@ -36,16 +36,15 @@ export const ListScreen = () => {
     setModalVisible(true);
   };
 
-  // const onCheckItem = async (item) => {
-  //   const result = await updateItem(item?._id, {
-  //     name: item?.name,
-  //     quantity: Number(item?.quantity),
-  //     checked: !item?.checked,
-  //   });
-  //   if (!result.error) {
-  //     await loadListItems();
-  //   }
-  // };
+  const onCheckItem = async (item) => {
+    const result = await checkItem(item._id, {
+      ...item,
+      checked: !item.checked,
+    });
+    if (!result.error) {
+      await loadListItems();
+    }
+  };
 
   return (
     <div className="list-screen-container">
@@ -69,7 +68,11 @@ export const ListScreen = () => {
           {loading ? (
             <Loader />
           ) : (
-            <ListRender onEdit={onEditItem} list={listData} />
+            <ListRender
+              onCheckItem={onCheckItem}
+              onEdit={onEditItem}
+              list={listData}
+            />
           )}
         </div>
       </div>

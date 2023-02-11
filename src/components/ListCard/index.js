@@ -1,20 +1,13 @@
 import "./index.css";
 
-export const ListCard = ({ item, onClick }) => {
-  const onClickChecked = () => {
-    if (item?.checked === "checked") {
-      item.checked = "uncheked";
-      console.log(item?.checked);
-    }
-  };
-
+export const ListCard = ({ item, onClick, onCheckItem }) => {
   return (
     <div className="list-card-container">
       <img
         className="checkbox"
         alt="checkbox-icon"
         src={`/images/${item?.checked ? "checked.svg" : "unchecked.svg"}`}
-        onClick={() => onClickChecked(item)}
+        onClick={() => onCheckItem(item)}
       />
       <div className="list-card-text-container">
         <span className="list-card-text-container-title">{item?.name}</span>
