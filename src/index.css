@@ -49,3 +49,8 @@ h3 {
 
   color: #000000;
 }
+
+::-webkit-scrollbar {
+  visibility: hidden;
+  width: 0px;
+}
