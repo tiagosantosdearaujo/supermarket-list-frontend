@@ -14,44 +14,64 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 552px;
+  width: 90%;
   max-width: 552px;
-  height: 720px;
+  height: 96.57%;
   max-height: 720px;
   background-color: white;
   border-radius: 24px;
 }
 
 .shopping-bag-image {
-  width: 220px;
-  height: 220px;
-  margin: 72px 0px 25px 0px;
+  width: 39.856%;
+  height: 30.556%;
+  margin: 13.044% 0px 4.53% 0px;
 }
 
 .home-screen-title {
-  width: 307px;
+  width: 55.62%;
   text-align: center;
-  margin: 0px 0px 6px 0px;
+  margin: 0px 0px 1.089% 0px;
 }
 .home-screen-subtitle {
-  width: 310px;
+  width: 56.16%;
   text-align: center;
-  margin: 0px 0px 49px 0px;
+  margin: 0px 0px 8.878% 0px;
 }
 .home-screen-text {
-  width: 452px;
-  margin: 0px 0px 24px 0px;
+  width: 81.886%;
+  margin: 0px 0px 4.638% 0px;
 }
 
 .home-screen-input-container {
-  width: 452px;
+  width: 81.886%;
   height: 56px;
-  margin: 0px 0px 24px 0px;
+  margin: 0px 0px 4.35% 0px;
 }
 
 .home-screen-button {
-  width: 452px;
+  width: 81.886%;
   height: 42px;
   min-height: 42px;
-  margin: 0px 0px 73px 0px;
+  margin: 0px 0px 13.23% 0px;
+}
+
+@media screen and (max-width: 767px) {
+  .home-screen-title {
+    width: 90%;
+  }
+  .home-screen-subtitle {
+    width: 90%;
+  }
+  .home-screen-text {
+    width: 90%;
+  }
+
+  .home-screen-input-container {
+    width: 90%;
+  }
+
+  .home-screen-button {
+    width: 90%;
+  }
 }

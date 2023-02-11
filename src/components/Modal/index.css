@@ -15,7 +15,7 @@
 .modal-content {
   display: flex;
   flex-direction: column;
-  width: 30vw;
+  width: 40vw;
   height: 100vh;
   background-color: white;
 }
@@ -45,7 +45,7 @@
 
 .modal-input-container {
   width: 90%;
-  height: 6%;
+  height: 8%;
 
   margin-left: 24px;
 }
@@ -61,4 +61,13 @@
 
 .buttons-content {
   height: 48px;
+}
+
+@media screen and (max-width: 767px) {
+  .modal-content {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+  }
 }
