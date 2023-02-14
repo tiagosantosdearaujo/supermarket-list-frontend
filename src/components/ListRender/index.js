@@ -8,7 +8,7 @@ export const ListRender = ({ list, onEdit, onCheckItem }) => {
 
   return (
     <div className="list-screen-list-content-container">
-      {list.map((item) => (
+      {list?.map((item) => (
         <ListCard
           onCheckItem={onCheckItem}
           onClick={onEdit}
