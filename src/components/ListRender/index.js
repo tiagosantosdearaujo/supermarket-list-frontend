@@ -1,9 +1,9 @@
-import "./index.css";
-import { ListCard } from "../ListCard";
+import './index.css'
+import { ListCard } from '../ListCard'
 
 export const ListRender = ({ list, onEdit, onCheckItem }) => {
   if (list?.lenght === 0) {
-    return <h3>Sua lista esta vazia.</h3>;
+    return <h3>Sua lista esta vazia.</h3>
   }
 
   return (
@@ -17,5 +17,5 @@ export const ListRender = ({ list, onEdit, onCheckItem }) => {
         />
       ))}
     </div>
-  );
-};
+  )
+}

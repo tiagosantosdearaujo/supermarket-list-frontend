@@ -1,4 +1,4 @@
-import "./index.css";
+import './index.css'
 
 export const Input = ({ label, placeholder, value, onChange, type }) => {
   return (
@@ -12,5 +12,5 @@ export const Input = ({ label, placeholder, value, onChange, type }) => {
         type={type}
       />
     </div>
-  );
-};
+  )
+}
