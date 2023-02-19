@@ -1,8 +1,14 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import './index.css'
-import { Button, Input } from 'components'
+import { Button, Input, Title, Subtitle } from 'components'
 import { SAVE_USERNAME_PATH } from 'services/constants'
+import {
+  HomeScreenContainer,
+  HomeScreenContentContainer,
+  ShoppingBagImage,
+  HomeScreenInputContainer,
+  HomeScreenButton
+} from './styles.js'
 
 export const HomeScreen = () => {
   const navigate = useNavigate()
@@ -10,7 +16,7 @@ export const HomeScreen = () => {
 
   const onClickContinue = () => {
     if (username.length < 3) {
-      alert('username ddeve conter mais do que 3 caracteres')
+      alert('username deve conter mais do que 3 caracteres')
       return
     }
     localStorage.setItem(SAVE_USERNAME_PATH, username)
@@ -18,34 +24,30 @@ export const HomeScreen = () => {
   }
 
   return (
-    <div className="home-screen-container">
-      <div className="home-screen-content-container">
-        <img
-          className="shopping-bag-image"
-          src="/images/shopping-bag.svg"
-          alt="shopping-bag"
-        />
-        <h1 className="home-screen-title">
+    <HomeScreenContainer>
+      <HomeScreenContentContainer>
+        <ShoppingBagImage />
+        <Title marginBotton={1.089}>
           Sua lista de supermercado mais fácil do que nunca
-        </h1>
-        <h3 className="home-screen-subtitle">
+        </Title>
+        <Subtitle alignItems={'center'} marginBotton={8.878}>
           Ajudamos você a organizar sua lista de compras de forma descomplicada.
-        </h3>
-        <h3 className="home-screen-text ">
+        </Subtitle>
+        <Subtitle marginBotton={4.638} alignItems={'left'} Widht={81.886}>
           Digite abaixo seu usuário para ter acesso a sua lista de compras:
-        </h3>
-        <div className="home-screen-input-container">
+        </Subtitle>
+        <HomeScreenInputContainer>
           <Input
             onChange={(text) => setUsername(text)}
             value={username}
             label="Username"
             placeholder="Jose Galinha"
           />
-        </div>
-        <div className="home-screen-button">
+        </HomeScreenInputContainer>
+        <HomeScreenButton>
           <Button onClick={onClickContinue}>Acessar</Button>
-        </div>
-      </div>
-    </div>
+        </HomeScreenButton>
+      </HomeScreenContentContainer>
+    </HomeScreenContainer>
   )
 }
